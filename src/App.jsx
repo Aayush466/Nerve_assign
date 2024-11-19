@@ -141,7 +141,7 @@ const StrategyDashboard = () => {
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       {/* Toggle for Views */}
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent:'center', gap: '10px', marginBottom: '20px' }}>
         {['Bullish', 'Bearish', 'RangeBound', 'Volatile'].map((view) => (
           <button
             key={view}
@@ -161,10 +161,11 @@ const StrategyDashboard = () => {
       </div>
 
       {/* Date Dropdown */}
+      <div style={{ display: 'flex', justifyContent:'center'}}>
       <select
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}
-        style={{ padding: '10px', marginBottom: '20px', borderRadius: '5px', border: '1px solid #ccc' }}
+        style={{ padding: '10px', marginBottom: '20px', borderRadius: '5px', border: '1px solid #ccc',width: '400px' }}
       >
         {dateArray.map((date) => (
           <option key={date} value={date}>
@@ -172,9 +173,10 @@ const StrategyDashboard = () => {
           </option>
         ))}
       </select>
+      </div>
 
       {/* Strategy Cards */}
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: '20px', display:'flex' ,flexDirection: 'column', justifyContent:'center' }}>
         {strategies.length > 0 ? (
           Object.entries(strategyCounts).map(([strategy, count]) => (
             <div
@@ -187,10 +189,12 @@ const StrategyDashboard = () => {
                 boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
               }}
             >
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               <h4 style={{ margin: 0 }}>{strategy}</h4>
               <p style={{ margin: 0 }}>
                 {count} {count === 1 ? 'Strategy' : 'Strategies'}
               </p>
+              </div>
             </div>
           ))
         ) : (
