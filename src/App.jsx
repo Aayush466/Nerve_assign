@@ -191,7 +191,7 @@ const StrategyDashboard = () => {
                 boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'  }}>
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'  }}> // flex added
               <h4 style={{ margin: 0 }}>{strategy}</h4>
               <p style={{ margin: 0 }}>
                 {count} {count === 1 ? 'Strategy' : 'Strategies'}
