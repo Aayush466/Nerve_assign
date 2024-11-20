@@ -161,11 +161,13 @@ const StrategyDashboard = () => {
       </div>
 
       {/* Date Dropdown */}
-      <div style={{ display: 'flex', justifyContent:'center'}}>
-      <select
+      <div style={{display:'flex',justifyContent:'center'}}>
+      <select 
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}
-        style={{ padding: '10px', marginBottom: '20px', borderRadius: '5px', border: '1px solid #ccc',width: '400px' }}
+        style={{ padding: '10px', marginBottom: '20px', borderRadius: '5px', border: '1px solid #ccc',width: '400px',
+          // appearance:'none',
+         }}
       >
         {dateArray.map((date) => (
           <option key={date} value={date}>
@@ -176,7 +178,7 @@ const StrategyDashboard = () => {
       </div>
 
       {/* Strategy Cards */}
-      <div style={{ marginTop: '20px', display:'flex' ,flexDirection: 'column', justifyContent:'center' }}>
+      <div style={{ marginTop: '20px'}}>
         {strategies.length > 0 ? (
           Object.entries(strategyCounts).map(([strategy, count]) => (
             <div
@@ -189,7 +191,7 @@ const StrategyDashboard = () => {
                 boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'  }}>
               <h4 style={{ margin: 0 }}>{strategy}</h4>
               <p style={{ margin: 0 }}>
                 {count} {count === 1 ? 'Strategy' : 'Strategies'}
@@ -198,7 +200,7 @@ const StrategyDashboard = () => {
             </div>
           ))
         ) : (
-          <p>No strategies available for {selectedDate}.</p>
+          <p style ={{display:'flex' ,justifyContent:'center'}}>No strategies available for {selectedDate} .</p>
         )}
       </div>
     </div>
